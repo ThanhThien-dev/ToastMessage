@@ -1,0 +1,150 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Helvetica Neue";
+    background-color: #f4f4f5;
+}
+
+body>div {
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    padding: 12px 48px;
+    color: #fff;
+    border-radius: 30px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    opacity: .8;
+}
+
+.btn + .btn {
+    margin-left: 16px;
+}
+
+.btn--success {
+    background-color: green;
+}
+
+.btn--error {
+    background-color: orange;
+}
+
+#toast {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    min-width: 450px;
+    max-width: 450px;
+    background: #fff;
+    padding: 20px 12px;
+    border-radius: 2px;
+    border-left: 4px solid;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.08);
+    animation: slideFromleft ease .5s, fadeOut ease-out 1s 3s forwards;
+    transition: all linear .3s;
+    z-index: 9999;
+}
+
+.toast + .toast {
+    margin-top: 16px;
+}
+
+@keyframes slideFromleft {
+    from {
+        opacity: .5;
+        transform: translateX(calc(100% + 32px));
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.toast__close,
+.toast__icon {
+    padding: 0 12px;
+    font-size: 24px;
+}
+
+.toast__body {
+    flex-grow: 1;
+}
+
+.toast__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.toast__msg {
+    margin-top: 10px;
+    opacity: .6;
+}
+
+.toast__close {
+    margin-left: 50px;
+    opacity: .3;
+}
+
+.toast__close:hover {
+    cursor: pointer;
+    opacity: .6;
+}
+
+/* Modify */
+.toast--success {
+    border-color: blueviolet;
+}
+
+.toast--success .toast__icon {
+    color: blueviolet;
+}
+
+.toast--info {
+    border-color: yellow;
+}
+
+.toast--info .toast__icon {
+    color: yellow;
+}
+
+.toast--warning {
+    border-color: orange;
+}
+
+.toast--warning .toast__icon {
+    color: orange;
+}
+
+.toast--error {
+    border-color: red;
+}
+
+.toast--error .toast__icon {
+    color: red;
+}
+
+/* End Modify */
